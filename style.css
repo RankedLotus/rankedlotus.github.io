@@ -1,13 +1,40 @@
 :root {
     --my-width: 12.5vw;
     --my-height: 6.75vw;
-    --time_len: 20s;
+    --time_len: 23s;
 }
 
 .title{
     font-size: 6vw;
+    font-family: "Monospace";
+    text-align: center;
+    color: whitesmoke;
+    text-shadow:
+        -10px -10px 1px rgb(133, 175, 150),
+        -9px -9px 1px rgb(133, 175, 150),
+        -8px -8px 1px rgb(133, 175, 150),
+        -7px -7px 1px rgb(133, 175, 150),
+        -6px -6px 1px rgb(133, 175, 150),
+        -5px -5px 1px rgb(133, 175, 150),
+        -4px -4px 1px rgb(133, 175, 150),
+        -3px -3px 1px rgb(133, 175, 150),
+        -2px -2px 1px rgb(133, 175, 150),
+        -1px -1px 1px rgb(133, 175, 150);
 }
 
+.mbg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('forest-backdrop.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: blur(3px);
+}
 /*animation stuff*/
 
 .slider{
@@ -26,20 +53,26 @@
 }
 
 .slider .list .item{
-    border: 10px solid black;
+    border: 2px solid black;
     
     position: absolute;
     left: 110%;
     animation: autoRun var(--time_len) linear infinite;
     animation-delay: calc(var(--time_len) / var(--quantity) * -1 * (var(--pos)));
+    transition: filter 0.5s;
     
 }
 
 .slider .list .item img{
+    
     border-bottom: 3vw solid rgb(192, 152, 18);
     border-top: 0.3vw solid rgb(192, 152, 18);
     border-left: 0.4vw solid rgb(192, 152, 18);
     border-right: 0.4vw solid rgb(192, 152, 18);
+    border-bottom: 3vw solid rgb(170, 214, 153);
+    border-top: 0.3vw solid rgb(170, 214, 153);
+    border-left: 0.4vw solid rgb(170, 214, 153);
+    border-right: 0.4vw solid rgb(170, 214, 153);
     width: var(--my-width);
     height: var(--my-height);
     transform: rotate(0deg);
@@ -60,4 +93,11 @@
 
 .slider:hover .item{
     animation-play-state: paused!important;
+    filter: grayscale(1);
+    /*filter: blur(2px);*/
+}
+
+.slider .item:hover{
+    filter: grayscale(0);
+    /*filter: blur(0px);*/
 }
