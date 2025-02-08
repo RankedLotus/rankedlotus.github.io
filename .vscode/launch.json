@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [  
+      {
+        "name": "Launch Brave with HTML File",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:3000",  // Replace with the URL of your local server
+        "webRoot": "${workspaceFolder}",
+        "runtimeExecutable": "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser", // Path to Brave browser executable (adjust for your OS)
+        "runtimeArgs": [
+          "--remote-debugging-port=9222"  // This enables remote debugging
+        ]
+      }
+    ]
+  }
+  

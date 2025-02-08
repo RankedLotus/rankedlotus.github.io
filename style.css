@@ -1,0 +1,63 @@
+:root {
+    --my-width: 12.5vw;
+    --my-height: 6.75vw;
+    --time_len: 20s;
+}
+
+.title{
+    font-size: 6vw;
+}
+
+/*animation stuff*/
+
+.slider{
+    overflow: hidden;
+    width: 100%;
+    
+    height: calc(var(--my-height) + 4vw);
+    --quantity: 8;
+}
+
+.slider .list{
+    
+    /*display: flex;*/
+    position: relative;
+    display: flex;
+}
+
+.slider .list .item{
+    border: 10px solid black;
+    
+    position: absolute;
+    left: 110%;
+    animation: autoRun var(--time_len) linear infinite;
+    animation-delay: calc(var(--time_len) / var(--quantity) * -1 * (var(--pos)));
+    
+}
+
+.slider .list .item img{
+    border-bottom: 3vw solid rgb(192, 152, 18);
+    border-top: 0.3vw solid rgb(192, 152, 18);
+    border-left: 0.4vw solid rgb(192, 152, 18);
+    border-right: 0.4vw solid rgb(192, 152, 18);
+    width: var(--my-width);
+    height: var(--my-height);
+    transform: rotate(0deg);
+     /*height: var(--my-height);
+   width: var(--my-width);
+    min-width: var(--my-width);*/
+
+}
+
+@keyframes autoRun {
+    from{
+        left: 100%;
+    }
+    to{
+        left: calc(var(--my-width) * -1);
+    }
+}
+
+.slider:hover .item{
+    animation-play-state: paused!important;
+}
