@@ -4,22 +4,33 @@
     --time_len: 23s;
 }
 
+.img-descript {
+    font-size: 1vw;
+    background-color: rgb(230, 247, 223);
+    text-align: center;
+}
 .title{
+    --s1-color: rgb(133, 175, 150);
+    --s2-color: rgb(182, 192, 175);
     font-size: 6vw;
     font-family: "Monospace";
     text-align: center;
     color: whitesmoke;
     text-shadow:
-        -10px -10px 1px rgb(133, 175, 150),
-        -9px -9px 1px rgb(133, 175, 150),
-        -8px -8px 1px rgb(133, 175, 150),
-        -7px -7px 1px rgb(133, 175, 150),
-        -6px -6px 1px rgb(133, 175, 150),
-        -5px -5px 1px rgb(133, 175, 150),
-        -4px -4px 1px rgb(133, 175, 150),
-        -3px -3px 1px rgb(133, 175, 150),
-        -2px -2px 1px rgb(133, 175, 150),
-        -1px -1px 1px rgb(133, 175, 150);
+        -10px -10px 1px var(--s1-color),
+        -9px -9px 1px var(--s1-color),
+        -8px -8px 1px var(--s1-color),
+        -7px -7px 1px var(--s1-color),
+        -6px -6px 1px var(--s1-color),
+        -5px -5px 1px var(--s1-color),
+        -4px -4px 1px var(--s1-color),
+        -3px -3px 1px var(--s1-color),
+        -2px -2px 1px var(--s1-color),
+        -1px -1px 1px var(--s1-color),
+        -10px -10px 40px var(--s2-color),
+        10px -10px 40px var(--s2-color),
+        -10px 10px 40px var(--s2-color),
+        10px 10px 40px var(--s2-color);
 }
 
 .mbg {
@@ -54,7 +65,7 @@
 
 .slider .list .item{
     border: 2px solid black;
-    
+    background-color: rgb(230, 247, 223);
     position: absolute;
     left: 110%;
     animation: autoRun var(--time_len) linear infinite;
@@ -64,15 +75,10 @@
 }
 
 .slider .list .item img{
-    
-    border-bottom: 3vw solid rgb(192, 152, 18);
-    border-top: 0.3vw solid rgb(192, 152, 18);
-    border-left: 0.4vw solid rgb(192, 152, 18);
-    border-right: 0.4vw solid rgb(192, 152, 18);
-    border-bottom: 3vw solid rgb(170, 214, 153);
-    border-top: 0.3vw solid rgb(170, 214, 153);
-    border-left: 0.4vw solid rgb(170, 214, 153);
-    border-right: 0.4vw solid rgb(170, 214, 153);
+    --c1: rgb(170, 214, 153);
+    border-top: 0.3vw solid rgb(230, 247, 223);
+    border-left: 0.4vw solid rgb(230, 247, 223);
+    border-right: 0.4vw solid rgb(230, 247, 223);
     width: var(--my-width);
     height: var(--my-height);
     transform: rotate(0deg);
@@ -93,11 +99,11 @@
 
 .slider:hover .item{
     animation-play-state: paused!important;
-    filter: grayscale(1);
+    filter: grayscale(1) blur(2px) brightness(80%);
     /*filter: blur(2px);*/
 }
 
 .slider .item:hover{
-    filter: grayscale(0);
+    filter: grayscale(0) blur(0px) brightness(110%);
     /*filter: blur(0px);*/
 }
