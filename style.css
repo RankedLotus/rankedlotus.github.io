@@ -1,13 +1,34 @@
 :root {
     --my-width: 12.5vw;
     --my-height: 6.75vw;
-    --time_len: 23s;
+    --time_len: 35s;
 }
 
 .img-descript {
     font-size: 1vw;
     background-color: rgb(230, 247, 223);
     text-align: center;
+}
+
+.about {
+    margin-top: 12vw;
+    padding: 0.5vi;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    left: 50%;
+    display: flexbox;
+}
+.abt-title {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 2vw;
+    text-decoration: solid;
+    
+}
+
+h3 {
+    color: rgb(0, 0, 0);
+    font-size: 1.2vw;
 }
 .title{
     --s1-color: rgb(133, 175, 150);
@@ -27,10 +48,10 @@
         -3px -3px 1px var(--s1-color),
         -2px -2px 1px var(--s1-color),
         -1px -1px 1px var(--s1-color),
-        -10px -10px 40px var(--s2-color),
-        10px -10px 40px var(--s2-color),
-        -10px 10px 40px var(--s2-color),
-        10px 10px 40px var(--s2-color);
+        -12px -12px 40px var(--s2-color),
+        12px -12px 40px var(--s2-color),
+        -12px 12px 40px var(--s2-color),
+        12px 12px 40px var(--s2-color);
 }
 
 .mbg {
@@ -38,39 +59,42 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     background-image: url('forest-backdrop.JPG');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat:repeat-y;
     z-index: -1;
     filter: blur(3px);
 }
 /*animation stuff*/
 
 .slider{
+    --quantity: 12;
     overflow: hidden;
-    width: 100%;
-    
+    width: calc((var(--width) + 50px )* var(--quantity));
     height: calc(var(--my-height) + 4vw);
-    --quantity: 8;
+    
 }
 
 .slider .list{
-    
+    align-items: bottom;
     /*display: flex;*/
     position: relative;
     display: flex;
+    width: 100%;
+    width: calc((var(--width) + 50px )* var(--quantity));
 }
 
 .slider .list .item{
+    
     border: 2px solid black;
     background-color: rgb(230, 247, 223);
     position: absolute;
     left: 110%;
     animation: autoRun var(--time_len) linear infinite;
     animation-delay: calc(var(--time_len) / var(--quantity) * -1 * (var(--pos)));
-    transition: filter 0.5s;
+    transition: filter 0.75s;
     
 }
 
@@ -81,11 +105,6 @@
     border-right: 0.4vw solid rgb(230, 247, 223);
     width: var(--my-width);
     height: var(--my-height);
-    transform: rotate(0deg);
-     /*height: var(--my-height);
-   width: var(--my-width);
-    min-width: var(--my-width);*/
-
 }
 
 @keyframes autoRun {
@@ -93,7 +112,7 @@
         left: 100%;
     }
     to{
-        left: calc(var(--my-width) * -1);
+        left: calc(var(--my-width) * (6 - var(--quantity)));
     }
 }
 
