@@ -126,3 +126,38 @@ h3 {
     filter: grayscale(0) blur(0px) brightness(110%);
     /*filter: blur(0px);*/
 }
+
+/*====================
+importing for top bar with a twist
+====================*/
+.bar {
+    justify-content: flex-start;
+    display: flex;
+    width: 100%;
+    position: sticky; /*this will make the bar stay at the top when you scroll*/
+}
+
+a {
+    color: whitesmoke
+}
+.bar .item {
+  
+  cursor: pointer;
+  font-weight: bold;
+  color: whitesmoke;
+
+    display: flex;
+    background-color: rgb(133, 175, 150);
+    justify-content: center;
+    flex: 1;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    box-sizing: border-box;
+
+    border-color: black;
+    text-align: center;
+    border: 5px;
+    border-radius: 5px;
+}
